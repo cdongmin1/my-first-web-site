@@ -1,0 +1,355 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        font-size: 15px;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        .membershipSave {
+            border: 1px solid; height: 300px; width: 300px;
+        }
+
+        /* 계산기 */
+        .cal *{
+            margin-bottom: 10px; margin-left: 10px;
+        }
+        .cal {
+            border: 3px solid; width: 370px;
+            border-radius: 15px;
+        }
+        .cal #result {
+            border: 1px solid; width: 325px; margin-left: 20px;
+            margin-top: 20px; margin-bottom: 20px; height: 80px;
+        }
+        .cal #seven{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #seven:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        .cal #eight{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #eight:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        
+        .cal #nine{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #nine:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+
+        .cal #four{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #four:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        .cal #five{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #five:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        .cal #six{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #six:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+
+        .cal #one{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #one:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        .cal #two{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #two:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        .cal #three{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #three:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+
+        .cal #zero{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #zero:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        .cal #ac{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #ac:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        .cal #equals{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #equals:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+        
+        /* '+, -, *, /' */
+        .cal #cal{
+            width: 70px; height: 70px; font-size: 30px;
+            border-radius: 15px; color: rgb(255, 177, 177);
+        }
+        .cal #cal:hover{
+            width: 70px; height: 70px; font-size: 30px; font-weight: bold;
+            border-radius: 15px; color: brown; border-width: 5px;
+        }
+       
+        
+    </style>
+</head>
+
+<script>
+    // 회원가입 페이지로 이동
+    function membership() {
+        window.location.href="membership.html";
+    }
+
+    // 로그인 페이지로 이동
+    function login() {
+        location.href="login.html";
+    }
+
+    // 회원가입 데이터 받아주기
+    function inputData() {
+        temp = location.href.split("?");
+        data = temp[1].split(",");
+        id = data[0];
+        pw = data[1];
+        name = data[2];
+        gender = data[3];
+        charater_str = data[4];
+        email_str = data[5];
+        birth = data[6];
+        tel_str = data[7];
+
+        document.write(decodeURIComponent("아이디 : " + id + "<br>비밀번호 : " + pw + "<br>이름 : " + name + "<br>성별 : " + gender + "<br>캐릭터 : " + charater_str + "<br>이메일 : " + email_str + "<br>생년월일 : " + birth + "<br>휴대폰번호 : " + tel_str));
+    }
+    
+    // 입력하는 계산기 숫자리스트
+    let numList = [];
+    
+    // 기호리스트 (+, -, *, /)
+    let signList = [];
+
+    // 계산기에 표현되는 전체 공식
+    let cul_str = "";
+
+    // 기호 누를 때 숫자 저장하고 리셋하는 변수
+    let cul_reset_str = "";
+
+    // 계산 값
+    let num_result = 0;
+
+    // 숫자 누르면 호출되는 함수
+    // cul_str 에 num이 붙어서 1 -> 10 -> 100 이렇게 붙음
+    function input_num(num) {
+        cul_str += num;
+        cul_reset_str += num;
+        document.getElementById('result').innerHTML = cul_str;
+    }
+    
+    // 기호를 누르면 호출되는 함수
+    // 
+    function cul_option(type) {
+        if(cul_str[cul_str.length -1] == undefined) {
+            alert('완성되지 않는 수식입니다.');
+            return false;
+        }
+
+        // cul_str의 마지막이 기호라면, (기호가 2번 입력된 경우)
+        if(cul_str[cul_str.length -1] == '+' ||
+        cul_str[cul_str.length -1] == '-' ||
+        cul_str[cul_str.length -1] == '*' ||
+        cul_str[cul_str.length -1] == '/'
+        ) {
+            alert('signList : ' + signList);
+            signList.pop();
+            alert('signList : ' + signList);
+            alert('cul_str : ' + cul_str);
+            cul_str = cul_str.substring(0, cul_str.length -1);
+            alert('cul_str : ' + cul_str);
+            document.getElementById('result').innerHTML = cul_str;
+            return false;
+        } else {
+            // cul_str의 마지막이 기호가 아니라면
+            numList.push(Number(cul_reset_str));
+            cul_reset_str = '';
+        }
+
+        if(type == '+') {
+            cul_str += "+";
+            signList.push("+");
+            document.getElementById('result').innerHTML = cul_str;
+        }
+        else if(type == '-') {
+            cul_str += "-";
+            signList.push("-");
+            document.getElementById('result').innerHTML = cul_str;
+        }
+        else if(type == '*') {
+            cul_str += "*";
+            signList.push("*");
+            document.getElementById('result').innerHTML = cul_str;
+        }
+        else if(type == '/') {
+            cul_str += "/";
+            signList.push("/");
+            document.getElementById('result').innerHTML = cul_str;
+        }
+        else if(type == '=') {
+            for(let i = 0; i < signList.length; i++) {
+                if(signList[i] == "*") {
+                    if(numList[i] != undefined) {
+                        let culNum = numList[i] * numList[i + 1];
+                        numList.splice(i, 2); // 계산한 숫자 삭제
+                        numList.splice(i, 0, culNum); // i index에서 0개 요소 제거 후 culNum
+                        signList.splice(i, 1); // 사용한 기호 삭제
+                    }
+                }
+                if(signList[i] == "/") {
+                    if(numList[i] != undefined) {
+                        let culNum = numList[i] / numList[i + 1];
+                        numList.splice(i, 2); // 계산한 숫자 삭제
+                        numList.splice(i, 0, culNum); // 삭제하지 않고 i index에 계산된 culNum 추가
+                        signList.splice(i, 1); // 사용한 기호 삭제
+                    }
+                }
+
+                // if(signList[i] != undefined) {
+                //     i = 0;
+                // }
+            }
+
+            
+            while(signList.length != 0) {
+
+                for(let i = 0; i < signList.length; i++) {
+                    if(signList[i] == "*") {
+                        if(numList[i] != undefined) {
+                            let culNum = numList[i] * numList[i + 1];
+                            numList.splice(i, 2); // 계산한 숫자 삭제
+                            numList.splice(i, 0, culNum); // i index에서 0개 요소 제거 후 culNum
+                            signList.splice(i, 1); // 사용한 기호 삭제
+                        }
+                    }
+                    if(signList[i] == "/") {
+                        if(numList[i] != undefined) {
+                            let culNum = numList[i] / numList[i + 1];
+                            numList.splice(i, 2); // 계산한 숫자 삭제
+                            numList.splice(i, 0, culNum); // 삭제하지 않고 i index에 계산된 culNum 추가
+                            signList.splice(i, 1); // 사용한 기호 삭제
+                        }
+                    }
+                }
+
+                if(signList[0] == "+") {
+                    let culNum = numList[0] + numList[1];
+                    numList.splice(0, 2);
+                    numList.splice(0, 0, culNum);
+                    signList.splice(0, 1);
+                }
+                else if(signList[0] == "-") {
+                    let culNum = numList[0] - numList[1];
+                    numList.splice(0, 2);
+                    numList.splice(0, 0, culNum);
+                    signList.splice(0, 1);
+                }
+            }
+            num_result = numList[0];
+
+            document.getElementById('result').innerHTML = cul_str + " = " + num_result;
+        }
+
+        
+    }
+
+
+</script>
+
+<body>
+    <h1>MAIN PAGE</h1><br>
+        
+    <input id="membership" type="submit" onclick="membership()" value="회원가입">
+    <input id="login" type="submit" onclick="login()" value="로그인"><br><br>
+    <div class="membershipSave">
+        <script>inputData()</script>
+    </div><br><br>
+
+    <div class="cal">
+        <div id="result"></div>
+
+        <div class="first">
+            <input type="button" onclick="input_num(this.value)" id="seven" name="seven" value="7">
+            <input type="button" onclick="input_num(this.value)" id="eight" name="eight" value="8">
+            <input type="button" onclick="input_num(this.value)" id="nine" name="nine" value="9">
+            <input type="button" onclick="cul_option('+')" id="cal" name="cal" value="+">
+        </div>
+
+        <div class="second">
+            <input type="button" onclick="input_num(this.value)" id="four" name="four" value="4">
+            <input type="button" onclick="input_num(this.value)" id="five" name="five" value="5">
+            <input type="button" onclick="input_num(this.value)" id="six" name="six" value="6">
+            <input type="button" onclick="cul_option('-')" id="cal" name="cal" value="-">
+        </div>
+
+        <div class="third">
+            <input type="button" onclick="input_num(this.value)" id="one" name="one" value="1">
+            <input type="button" onclick="input_num(this.value)" id="two" name="two" value="2">
+            <input type="button" onclick="input_num(this.value)" id="three" name="three" value="3">
+            <input type="button" onclick="cul_option('*')" id="cal" name="cal" value="*">
+        </div>
+
+        <div class="fourth">
+            <input type="button" onclick="input_num(this.value)" id="zero" name="zero" value="0">
+            <input type="reset" onclick="window.location.reload()" id="ac" name="ac" value="AC">
+            <input type="button" onclick="cul_option('=')" id="equals" name="equals" value="=">
+            <input type="button" onclick="cul_option('/')" id="cal" name="cal" value="/">
+        </div>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+</style>
+<script>
+    function memId() {
+        temp = location.href.split("?");
+        data = temp[1].split(",");
+        txt_userId = data[0];
+
+        document.write(txt_userId);
+    }
+</script>
+<body>
+    <h1><script>memId()</script>님 안녕하세요.<br>회원전용 화면입니다</h1><br>
+</body>
+</html>

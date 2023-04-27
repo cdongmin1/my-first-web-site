@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+</style>
+<script>
+    function memScreen() {
+        let txt_userId = document.getElementById("id").value;
+        let txt_userPw = document.getElementById("pw").value;
+        if(txt_userId == "test" && txt_userPw == 123) {
+            window.location.href="loginScreen.html?" + txt_userId;
+        }
+        else {
+            alert("잘못입력하셨습니다.");
+        }
+    }
+</script>
+<body>
+    <h1>LOGIN PAGE</h1><br>
+    
+    <form method="post" action="javascript:memScreen()">
+        아이디 : <input type="text" id="id" name="id"><br><br>
+        비밀번호 : <input type="password" id="pw" name="pw"><br><br>
+        <input type="submit" value="로그인">
+    </form>
+    <button onclick="location.href='main.html'">뒤로가기</button>
+    
+</body>
+</html>
